@@ -6,7 +6,7 @@ let setTimer = process.argv.slice(2);
 
 for (let time of setTimer) {
   // edgecase if time is not a number
-  if (isNaN(time)) {
+  if (isNaN(time) || -time || time === ' ') {
     process.stdout.write("Sorry, your input wasn't a number\n");
     break;
   }
