@@ -5,8 +5,16 @@ let setTimer = process.argv.slice(2);
 // loop through each element in array
 
 for (let time of setTimer) {
+  // edgecase if time is not a number
+  if (isNaN(time)) {
+    process.stdout.write("Sorry, your input wasn't a number\n");
+    break;
+  }
+
+  // convert time to milliseconds
   time = time * 1000;
+  // set timeout function to print '.' when timer is up
   setTimeout(() => {
-    process.stdout.write('.');
+    process.stdout.write('.\n');
   }, time);
 }
