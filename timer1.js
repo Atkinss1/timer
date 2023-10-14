@@ -1,3 +1,6 @@
+// function takes in integers as CL arguments and initiates a timer
+// timer will print a '.' when it has ended
+
 // take in CL argument array (setTimer)
 
 let setTimer = process.argv.slice(2);
