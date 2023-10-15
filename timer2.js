@@ -42,14 +42,14 @@ stdin.on('data', (key) => {
     // converting time to milliseconds
     const timeInSeconds = setTime * 1000;
     process.stdout.write(`\n\n\t\t\t\tTimer is set for ${setTime} seconds..\n
-    \t\t\t    -------------------------------------`, stdin.setRawMode(false));
+    \t\t\t    -------------------------------------`);
 
     //! ALARM
     setTimeout(() => {
       process.stdout.write(`\n\n\t\t\t\t\tTIME IS UP!\n\n
       \n\n`);
       goodbye();
-    }, timeInSeconds, stdin.setRawMode(true));
+    }, timeInSeconds);
       
     console.log('\n\n\n');
   }
