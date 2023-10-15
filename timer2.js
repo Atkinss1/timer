@@ -1,5 +1,4 @@
 // importing readline to use an interface for reading data one line at a time
-const readline = require('readline');
 const stdin = process.stdin;
 const welcomeFunc = require('./welcome-alarm');
 const goodbye = require('./goodbyeFunc');
