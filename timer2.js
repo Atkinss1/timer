@@ -35,7 +35,8 @@ stdin.on('data', (key) => {
 
     //! ALARM
     setTimeout(() => {
-      process.stdout.write('\n\n\t\t\t\t    TIME IS UP!\n');
+      process.stdout.write(`\n\n\t\t\t\t    TIME IS UP!\n\n
+      \n\n\t\t\t    Thanks for using me, ciao!\n\n`);
     }, timeInSeconds, stdin.setRawMode(true));
       
     console.log('\n\n\n');
