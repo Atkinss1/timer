@@ -6,16 +6,6 @@ const goodbye = require('./goodbyeFunc');
 stdin.setRawMode(true);
 stdin.setEncoding('utf8');
 
-const threeTabs = (str) => {
-  let spacing = '\t\t\t';
-  return spacing.concat(str);
-};
-
-const threeLines = (str) => {
-  let newLines = '\n\n\n';
-  return newLines.concat(str);
-}
-
 // creating an interface that connects stdin
 const rl = readline.createInterface({
   input: process.stdin,
