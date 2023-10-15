@@ -22,9 +22,10 @@ cd timer2
 ```
 2. Install the required dependencies.
 ```bash
+npm init -y
 npm install chalk@4.1.2
 ```
-3. ensure you have the "welcome-alarm" and "goodbyeFunc" external functions available in the same directory.
+3. ensure you have the "welcome-alarm", "goodbyeFunc" and "countDown" external functions available in the same directory.
 
  ## Usage
 
