@@ -1,8 +1,19 @@
 // importing readline to use an interface for reading data one line at a time
 const readline = require('readline');
 const stdin = process.stdin;
+const welcomeFunc = require('./welcome-alarm');
 stdin.setRawMode(true);
 stdin.setEncoding('utf8');
+
+const threeTabs = (str) => {
+  let spacing = '\t\t\t';
+  return spacing.concat(str);
+};
+
+const threeLines = (str) => {
+  let newLines = '\n\n\n';
+  return newLines.concat(str);
+}
 
 // creating an interface that connects stdin
 const rl = readline.createInterface({
@@ -10,10 +21,8 @@ const rl = readline.createInterface({
 });
 
 // tell user clock will beep or output '.' if they press "b" or choose number 1 to 9;
-console.log(`\n\n\n\t\t\tWelcome to the interactive alarm clock!
-\t    press 'b' to set the alarm off, or choose 1 - 9 to set a timer
-\t\t\t\tuse CTRL + C to exit\n\n`);
-// listening to user input using 'on'
+welcomeFunc();
+// listening to user input using stdin 'on'
 stdin.on('data', (key) => {
   // edgecase: forcing lowercase incase caplocks is on
   if (key.toLowerCase() === 'b') {
@@ -22,7 +31,8 @@ stdin.on('data', (key) => {
   }
   // key === to CTRL + C encoding
   if (key === '\u0003') {
-    console.log('\n\n\t\t\t    Thanks for using me, ciao!\n\n');
+    console.log(threeNewLines(threeSpacingTabs(
+      '     Thanks for using me, ciao!\n\n')));
     process.exit();
   }
   // keystroke is between 1 and 9
