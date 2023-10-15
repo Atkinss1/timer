@@ -2,6 +2,7 @@
 const readline = require('readline');
 const stdin = process.stdin;
 const welcomeFunc = require('./welcome-alarm');
+const goodbye = require('./goodbyeFunc');
 stdin.setRawMode(true);
 stdin.setEncoding('utf8');
 
@@ -31,8 +32,7 @@ stdin.on('data', (key) => {
   }
   // key === to CTRL + C encoding
   if (key === '\u0003') {
-    console.log(threeNewLines(threeSpacingTabs(
-      '     Thanks for using me, ciao!\n\n')));
+    goodbye();
     process.exit();
   }
   // keystroke is between 1 and 9
@@ -41,12 +41,14 @@ stdin.on('data', (key) => {
 
     // converting time to milliseconds
     const timeInSeconds = setTime * 1000;
-    process.stdout.write(`\n\n\t\t\t    Timer is set for ${setTime} seconds..`, stdin.setRawMode(false));
+    process.stdout.write(`\n\n\t\t\t\tTimer is set for ${setTime} seconds..\n
+    \t\t\t    -------------------------------------`, stdin.setRawMode(false));
 
     //! ALARM
     setTimeout(() => {
-      process.stdout.write(`\n\n\t\t\t\t    TIME IS UP!\n\n
-      \n\n\t\t\t    Thanks for using me, ciao!\n\n`);
+      process.stdout.write(`\n\n\t\t\t\t\tTIME IS UP!\n\n
+      \n\n`);
+      goodbye();
     }, timeInSeconds, stdin.setRawMode(true));
       
     console.log('\n\n\n');
