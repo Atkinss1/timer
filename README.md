@@ -39,6 +39,7 @@ node timer2.js
 
 * `welcome-alarm`: This function will be called when you run `node timer2.js`.
 * `goodbyeFunc`: This function will be called when you exit the program via `CTRL + C` or the timer ends.
+* `countDown`: This function will be called when you select a numerical value and displays a visual count down.
 
 ## Acknowledgements
 
