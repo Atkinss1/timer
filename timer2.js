@@ -20,7 +20,7 @@ stdin.on('data', (key) => {
   // edgecase: forcing lowercase incase caplocks is on
   if (key.toLowerCase() === 'b') {
     // printing message to console for each key stroke
-    process.stdout.write('\t\t\t\t\t.\n');
+    process.stdout.write('\t\t\t\t\t      🕐\n');
   }
   // key === to CTRL + C encoding
   if (key === '\u0003') {
