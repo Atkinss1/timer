@@ -38,7 +38,7 @@ stdin.on('data', (key) => {
     //! ALARM
     setTimeout(() => {
       process.stdout.write('\x07');
-      process.stdout.write(`\n\n\t\t\t\t\t   ${chalk.bgRedBright('TIME IS UP!')}\n\n
+      process.stdout.write(`\n\n\t\t\t\t\t  ${chalk.bgRedBright('TIME IS UP!')}\n\n
       \n\n`);
       goodbye();
     }, timeInSeconds);
