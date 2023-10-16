@@ -1,14 +1,12 @@
 // importing readline to use an interface for reading data one line at a time
 const stdin = process.stdin;
-const welcomeFunc = require('./welcome-alarm');
-const goodbye = require('./goodbyeFunc');
-const countDown = require('./countDown');
+const timerFunc = require('./index');
 const chalk = require('chalk');
 stdin.setRawMode(true);
 stdin.setEncoding('utf8');
 
 // display welcome line
-welcomeFunc();
+timerFunc.welcomeFunc();
 // listening to user input using stdin 'on'
 stdin.on('data', (key) => {
   // edgecase: forcing lowercase incase caplocks is on
@@ -19,7 +17,7 @@ stdin.on('data', (key) => {
   }
   // key === to CTRL + C encoding
   if (key === '\u0003') {
-    goodbye();
+    timerFunc.goodbyeFunc();
     process.exit();
   }
   // keystroke is between 1 and 9
@@ -32,7 +30,7 @@ stdin.on('data', (key) => {
     \t\t\t    ${chalk.bold.cyan('  -------------------------------------')}`);
 
     // countdown display
-    countDown(setTime);
+    timerFunc.countDown(setTime);
 
 
     //! ALARM
@@ -40,7 +38,7 @@ stdin.on('data', (key) => {
       process.stdout.write('\x07');
       process.stdout.write(`\n\n\t\t\t\t\t  ${chalk.bgRedBright('TIME IS UP!')}\n\n
       \n\n`);
-      goodbye();
+      timerFunc.goodbyeFunc();
     }, timeInSeconds);
       
     console.log('\n\n\n');
